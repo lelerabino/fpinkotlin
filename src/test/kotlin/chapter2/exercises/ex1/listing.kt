@@ -10,12 +10,12 @@ class Exercise1 : WordSpec({
     fun fib(i: Int): Int {
         tailrec fun loop(index: Int, prev1: Int, prev: Int): Int =
             if (index == i) (prev1 + prev) else loop(
-                index + 1,
-                prev,
-                prev1 + prev
+                index = index + 1,
+                prev1 = prev,
+                prev = prev1 + prev
             )
 
-        return if (i <= 1) i else loop(2, 0, 1)
+        return if (i <= 1) i else loop(index = 2, prev1 = 0, prev = 1)
     }
 
     //end::init[]

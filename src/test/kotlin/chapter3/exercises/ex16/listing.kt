@@ -1,14 +1,15 @@
 package chapter3.exercises.ex16
 
+import chapter3.Cons
 import chapter3.List
+import chapter3.foldRight
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.WordSpec
-import utils.SOLUTION_HERE
 
 // tag::init[]
 fun doubleToString(xs: List<Double>): List<String> =
+    foldRight(xs, List.empty()) { d, acc -> Cons(d.toString(), acc) }
 
-    SOLUTION_HERE()
 // end::init[]
 
 //TODO: Enable tests by removing `!` prefix
